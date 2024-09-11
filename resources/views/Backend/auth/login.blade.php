@@ -7,17 +7,26 @@
     <title>Login Page</title>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
+
 </head>
 <body>
-    <form method="POST" action="{{route('auth.login')}}">
+
+    <form method="POST" action="/login">
+      @csrf
         <div class="mt-4 ">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <label for="email" class="form-label">Email address</label>
+          <input type="text" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+          @if ($errors->has('email'))
+           <span class="error-message text-danger">*{{$errors -> first('email')}}</span>
+          @endif
           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" >
+          @if ($errors -> has('password'))
+            <span class="error-message text-danger">*{{$errors -> first('password')}}</span>
+          @endif
         </div>
         <div class="mb-3 form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
