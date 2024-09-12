@@ -7,7 +7,9 @@ import Form from "~/pages/Form";
 import GeographyPage from "~/pages/Geography";
 import Invoices from "~/pages/Invoices";
 import LinePage from "~/pages/Line";
+import LoginPage from "~/pages/Login/Login";
 import PiePage from "~/pages/Pie";
+import RegisterPage from "~/pages/Register/Register";
 import Team from "~/pages/Team";
 import Dashboard from "~/scenes/dashboard";
 
@@ -55,6 +57,14 @@ const publicRoutes = [
   {
     path: routeConfig.geography,
     component: GeographyPage
+  },
+  {
+    path: routeConfig.login,
+    component:  LoginPage,
+  },
+  {
+    path: routeConfig.register,
+    component:  RegisterPage,
   },
 ];
 

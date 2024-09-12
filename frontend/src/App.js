@@ -1,4 +1,4 @@
-import { Box, CssBaseline,  ThemeProvider } from "@mui/material";
+import {  CssBaseline,  ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import classNames from "classnames/bind";
 import styles from "./index.css"; // Ensure the use of CSS modules
@@ -6,6 +6,8 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { publicRoutes } from "./Routes/index";
 import { Fragment } from "react";
 import { DefaultLayout } from "./Layouts";
+import LoginPage from "./pages/Login/Login";
+import RegisterPage from "./pages/Register/Register";
 
 
 
@@ -22,6 +24,8 @@ function App() {
           <div className={cx("App")}>
             <main className={cx("content")}>
               <Routes>
+                <Route path='/login' element={<LoginPage />}></Route>
+                <Route path='/register' element={<RegisterPage />}></Route>
                 {publicRoutes.map((route, index) => {
 
                   let Layout = DefaultLayout;
